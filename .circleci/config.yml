@@ -3,7 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk-11.0.3-jdk
-    working_directory: ~/source
     steps:
       - checkout
-      - run: java -jar 
+      - read name
+      - run: javac $name.java
+      - run: jar cfe $name.jar $name $name.class
