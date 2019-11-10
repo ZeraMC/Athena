@@ -8,4 +8,6 @@ jobs:
       - run: javac Athena.java
       - run: jar cfe Athena.jar Athena Athena.class
       - run: git add Athena.jar
+      - run: git config user.email "zeraoramc@outlook.com"
+      - run: git config user.name "ZeraMC"
       - run: git push
