@@ -5,6 +5,7 @@ jobs:
       - image: circleci/openjdk-11.0.3-jdk
     steps:
       - checkout
-      - run: read name
-      - run: javac $name.java
-      - run: jar cfe $name.jar $name $name.class
+      - run: javac Athena.java
+      - run: jar cfe Athena.jar Main Athena.class
+      - run: git add Athena.jar
+      - run: git push
