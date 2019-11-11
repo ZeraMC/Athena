@@ -6,12 +6,12 @@ jobs:
     steps:
       - checkout
       - run: |
-          javac Athena.java
-          jar cfe Athena.jar Athena Athena.class
+          javac *.java
+          jar *.jar *.class
 
           git config --global user.email "zeraoramc@outlook.com"
           git config --global user.name "ZeraMC"
 
-          git add Athena.jar
+          git add *.jar
           git commit -m "[ci skip]"
           git push
