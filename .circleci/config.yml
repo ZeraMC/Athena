@@ -9,4 +9,4 @@ jobs:
           javac Athena.java
           jar cfe Athena.jar Athena Athena.class
           git add Athena.jar
-          run: git push
+          git push
