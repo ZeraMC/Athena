@@ -8,6 +8,10 @@ jobs:
       - run: |
           javac Athena.java
           jar cfe Athena.jar Athena Athena.class
+
+          git config --global user.email "zeraoramc@outlook.com"
+          git config --global user.name "ZeraMC"
+
           git add .
           git commit -m "Athena.jar"
           git push
