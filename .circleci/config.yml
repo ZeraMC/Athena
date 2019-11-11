@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: |
-        javac Athena.java
-        jar cfe Athena.jar Athena Athena.class
-        git add Athena.jar
-        run: git push
+          javac Athena.java
+          jar cfe Athena.jar Athena Athena.class
+          git add Athena.jar
+          run: git push
