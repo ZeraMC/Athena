@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          javac Athena.java
+          javac Main.java
           jar cfe Athena.jar Main Main.class
 
           git config --global user.email "zeraoramc@outlook.com"
