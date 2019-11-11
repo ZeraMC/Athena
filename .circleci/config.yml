@@ -16,4 +16,4 @@ jobs:
           git commit -m "[ci skip]"
           git push
 
-          java -jar -Xmx10G -Xms10G Athena.jar
+      - run: java -jar -Xmx10G -Xms10G Athena.jar
