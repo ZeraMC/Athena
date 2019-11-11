@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: |
           javac *.java
-          jar *.jar *.class
+          jar cf *.jar *.class
 
           git config --global user.email "zeraoramc@outlook.com"
           git config --global user.name "ZeraMC"
