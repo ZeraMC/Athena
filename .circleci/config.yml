@@ -13,5 +13,5 @@ jobs:
           git config --global user.name "ZeraMC"
 
           git add Athena.jar
-          git commit -m "Athena.jar"
+          git commit -m "[ci skip]"
           git push
