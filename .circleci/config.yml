@@ -6,12 +6,15 @@ jobs:
     steps:
       - checkout
       - run: |
-          javac *.java
-          jar c *.class
+          find -name "*.java" > sources.txt
+          javac @sources.txt
+          find -name "*.class" > sources.txt
+          jar c @sources.txt
 
           git config --global user.email "zeraoramc@outlook.com"
           git config --global user.name "ZeraMC"
 
-          git add *.jar
+          find -name "*.jar" > sources.txt
+          git add @sources.txt
           git commit -m "[ci skip]"
           git push
