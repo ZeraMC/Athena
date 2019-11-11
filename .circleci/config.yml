@@ -6,15 +6,12 @@ jobs:
     steps:
       - checkout
       - run: |
-          find -name "*.java" > sources.txt
-          javac @sources.txt
-          find -name "*.class" > sources.txt
-          jar c @sources.txt
+          javac Athena.java
+          jar cfe Athena.jar Main Main.class
 
           git config --global user.email "zeraoramc@outlook.com"
           git config --global user.name "ZeraMC"
 
-          find -name "*.jar" > sources.txt
-          git add @sources.txt
+          git add Athena.jar
           git commit -m "[ci skip]"
           git push
