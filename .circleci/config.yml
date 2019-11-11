@@ -8,5 +8,6 @@ jobs:
       - run: |
           javac Athena.java
           jar cfe Athena.jar Athena Athena.class
-          git add Athena.jar
+          git add .
+          git commit -m "Athena.jar"
           git push
