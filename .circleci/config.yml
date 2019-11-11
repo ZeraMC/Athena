@@ -12,6 +12,6 @@ jobs:
           git config --global user.email "zeraoramc@outlook.com"
           git config --global user.name "ZeraMC"
 
-          git add .
+          git add Athena.jar
           git commit -m "Athena.jar"
           git push
