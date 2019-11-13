@@ -9,6 +9,8 @@ jobs:
           javac Main.java
           jar cfe Athena.jar Main Main.class
 
+          read var
+
           git config --global user.email "zeraoramc@outlook.com"
           git config --global user.name "ZeraMC"
 
