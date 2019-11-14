@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:11.0.3-jdk-stretch
+    environment:
+      version: 0.0.1
+      build: 1
     steps:
       - checkout
       - run: |
@@ -12,7 +15,7 @@ jobs:
           git config --global user.email "zeraoramc@outlook.com"
           git config --global user.name "ZeraMC"
 
-          git add Athena.jar
+          git add $version/Athena-$build.jar
           git commit -m "[ci skip]"
           git push
 
