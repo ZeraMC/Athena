@@ -6,7 +6,6 @@ jobs:
     environment:
       version: 0.0.3
       build: 2
-    working_directory: tmp
     steps:
       - checkout
       - run:
@@ -39,7 +38,7 @@ jobs:
 
       - run:
           name: Running jar archive
-          command: java -jar -Xmx10G -Xms10G $version/Athena-$build.jar
+          command: java -jar -Xmx10G -Xms10G Athena-$build.jar
       - store_artifacts:
           path: $version/Athena-$build.jar
           destination: Artifacts
