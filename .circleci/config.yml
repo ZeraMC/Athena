@@ -38,7 +38,7 @@ jobs:
 
       - run:
           name: Running jar archive
-          command: java -jar -Xmx10G -Xms10G Athena-$build.jar
+          command: java -jar -Xmx10G -Xms10G $version/Athena-$build.jar
       - store_artifacts:
-          path: $version/Athena-$build.jar
+          path: "$version/Athena-$build.jar"
           destination: Artifacts
