@@ -15,23 +15,28 @@ jobs:
               mkdir $version
             fi
 
+        run:
           name: Compiling java files to class files
           command: javac Main.java
 
+        run:
           name: Adding class files to jar archive
           command: jar cfe $version/Athena-$build.jar Main Main.class
 
+        run:
           name: Setting github account to commit with
           command: |
             git config --global user.email "zeraoramc@outlook.com"
             git config --global user.name "ZeraMC"
 
+        run:
           name: Commiting jar archive to github
           command: |
             git add $version/Athena-$build.jar
             git commit -m "[ci skip]"
             git push
 
+        run:
           name: Running jar archive
           command: java -jar -Xmx10G -Xms10G $version/Athena-$build.jar
       - store_artifacts:
