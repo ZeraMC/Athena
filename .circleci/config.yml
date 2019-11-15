@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run: |
           javac Main.java
-          jar cfe Athena-$build.jar Main Main.class
+          jar cfe $version/Athena-$build.jar Main Main.class
 
           git config --global user.email "zeraoramc@outlook.com"
           git config --global user.name "ZeraMC"
