@@ -8,23 +8,32 @@ jobs:
       build: 1
     steps:
       - checkout
-      - run: |
-          if [ ! -d $version ]; then
-            mkdir $version
-            echo "p"
-          fi
+      - run:
+          name: Checking if version directory exists
+          command: |
+            if [ ! -d $version ]; then
+              mkdir $version
+            fi
 
-          javac Main.java
-          jar cfe $version/Athena-$build.jar Main Main.class
+          name: Compiling java files to class files
+          command: javac Main.java
 
-          git config --global user.email "zeraoramc@outlook.com"
-          git config --global user.name "ZeraMC"
+          name: Adding class files to jar archive
+          command: jar cfe $version/Athena-$build.jar Main Main.class
 
-          git add $version/Athena-$build.jar
-          git commit -m "[ci skip]"
-          git push
+          name: Setting github account to commit with
+          command: |
+            git config --global user.email "zeraoramc@outlook.com"
+            git config --global user.name "ZeraMC"
 
-      - run: java -jar -Xmx10G -Xms10G Athena.jar
+          name: Commiting jar archive to github
+          command: |
+            git add $version/Athena-$build.jar
+            git commit -m "[ci skip]"
+            git push
+
+          name: Running jar archive
+          command: java -jar -Xmx10G -Xms10G $version/Athena-$build.jar
       - store_artifacts:
           path: $version/Athena-$build.jar
           destination: Artifacts
