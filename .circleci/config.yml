@@ -25,3 +25,6 @@ jobs:
           git push
 
       - run: java -jar -Xmx10G -Xms10G Athena.jar
+      - store_artifacts:
+        path: $version/Athena-$build.jar
+        destination: Artifacts
