@@ -42,4 +42,5 @@ jobs:
       - store_artifacts:
           path: $version/Athena-$build.jar
           destination: Artifacts
-      - store_test_results
+      - store_test_results:
+          path: test-results
