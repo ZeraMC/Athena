@@ -9,7 +9,9 @@ jobs:
     steps:
       - checkout
       - run: |
-          mkdir $version
+          if [! -d $version]; then
+            mkdir $version
+          fi
 
           javac Main.java
           jar cfe $version/Athena-$build.jar Main Main.class
