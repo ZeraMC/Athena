@@ -11,7 +11,7 @@ jobs:
       - run: |
           if [ ! -d $version ]; then
             mkdir $version
-echo "p"
+            echo "p"
           fi
 
           javac Main.java
