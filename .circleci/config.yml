@@ -10,12 +10,12 @@ jobs:
       - checkout
       - run: |
           javac Main.java
-          jar cfe Athena.jar Main Main.class
+          jar cfe Athena-$build.jar Main Main.class
 
           git config --global user.email "zeraoramc@outlook.com"
           git config --global user.name "ZeraMC"
 
-          mkdir $version
+          
 
           git add $version/Athena-$build.jar
           git commit -m "[ci skip]"
